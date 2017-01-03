@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TPS Data</title>
+        <%= include_gon(:camel_case => true) %>
+        <%= csrf_meta_tags %>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
+
+    <header>
+        <nav class="navbar navbar-tps navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                    </button>
+                    <!-- Tulsa Public Schools Logo -->
+                    <a class="navbar-brand" style="padding: 0px" href="/">
+                        <%= image_tag("TPS_WHITE.png", height: '50') %>
+                    </a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <!-- Link to index -->
+                        <!-- The page variable is passed through the URL and is used to highlight the current page in the navbar via JS -->
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </header>
+
+    <body>
+        <div class="col-sm-10 col-sm-offset-1">
+            <% if flash[:notice] %>
+            <div class="alert alert-success" role="alert"><%= notice %></div>
+            <% end %>
+            <% if flash[:alert] %>
+            <div class="alert alert-danger" role="alert"><%= alert %></div>
+            <% end %>
+        </div>
+        <%= yield %>
+    </body>
+</html>
