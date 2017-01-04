@@ -198,7 +198,7 @@ $(document).on("turbolinks:load", function() {
                 }],
                 columnDefs: [{
                         targets: 0,
-                        width: '200px',
+                        width: '100px',
                         data: function(d) {
                             return ("<a href='#' class='btn btn-block btn-xs btn-primary' target='_blank'>Generate Letter</a>");
                         }
