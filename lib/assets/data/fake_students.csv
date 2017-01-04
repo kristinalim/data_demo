@@ -1,0 +1,20 @@
+STUDENTID,STUDENT_NUMBER,LASTFIRST,GRADE_LEVEL,ETHNICITY,ENROLL_STATUS,GENDER,OK_ELL,OK_IDEA,OK_GIFTED,present,in_membership,abs,percent_attn,chronic,count,at_site_now,district_present,district_membership,district_percent_attn,school_name,ild,chronic_abs
+606683,346239,"Mouse, Mickey",Grade 9,Hispanic,2,M,No,Yes,NO,4.5,17,12.5,26.470589,Yes,1,,32.5,68,47.794117,School A,Dr. Ebony Johnson,1
+129589,637125,"Duck, Donald,",Grade 10,Black,2,M,No,Yes,NO,52,63,11,82.53968,Yes,1,,53,64,82.8125,School A,Dr. Ebony Johnson,1
+802260,604608,"Ranger, Power",Grade 10,Black,2,M,No,Yes,NO,16.5,28,11.5,58.92857,Yes,1,,22.5,34,66.176468,School A,Dr. Ebony Johnson,1
+629490,871270,"Knight, Phil",Grade 9,Native American,2,M,No,Yes,NO,8,8,0,100,No,1,,41,41,100,School A,Dr. Ebony Johnson,0
+280060,415500,"Jordan, Michael",Grade 9,White Caucasian,0,M,No,No,NO,35.5,60,24.5,59.166668,Yes,1,,39.5,64,61.71875,School A,Dr. Ebony Johnson,0
+250784,690851,"Phelps, Michael",Grade 9,Black,2,M,No,Yes,NO,10,10,0,100,No,1,,67,67,100,School A,Dr. Ebony Johnson,0
+759213,576359,"Sanders, Barry",Grade 9,Black,2,M,No,No,NO,10,20,10,50,Yes,1,,14.5,44,32.954544,School A,Dr. Ebony Johnson,1
+704697,234878,"Smith, Steve",Grade 9,White Caucasian,0,F,No,Yes,NO,24.5,26,1.5,94.230766,Yes,1,,54,61,88.52459,School A,Dr. Ebony Johnson,0
+296063,493583,"James, Jeff",Grade 9,White Caucasian,0,M,No,No,NO,1,1,0,100,Yes,1,,39,80,48.75,School A,Dr. Ebony Johnson,0
+435668,168256,"White, Jeremy",Grade 11,Black,0,M,No,Yes,NO,9,20,11,45,Yes,1,,19.5,80,24.375,School A,Dr. Ebony Johnson,0
+215689,788990,"Buddy, Chris",Grade 10,White Caucasian,2,F,No,No,NO,13,24,11,54.166668,Yes,1,,21,43,48.837208,School B,Dr. Ebony Johnson,1
+387428,665085,"Dell, Michael",Grade 11,Black,0,F,No,No,NO,38.5,59,20.5,65.254234,Yes,1,,49.5,75,66,School B,Dr. Ebony Johnson,0
+835139,117849,"Gates, Bill",Grade 10,Black,2,M,No,Yes,NO,5.5,7,1.5,78.571426,No,1,,45.5,48,94.791664,School B,Dr. Ebony Johnson,0
+330583,274777,"Davidson, Sam",Grade 9,Black,0,M,No,No,NO,32.5,55,22.5,59.090908,Yes,1,,51.5,74,69.594597,School B,Dr. Ebony Johnson,0
+379456,520145,"Dylan, Bob",Grade 9,White Caucasian,0,F,No,No,NO,12,14,2,85.714287,No,1,,78,80,97.5,School B,Dr. Ebony Johnson,0
+998390,969883,"Syri, Apple",Grade 8,White Caucasian,0,F,No,Yes,NO,8.5,10,1.5,85,Yes,1,,61.5,75,82,School C,Stacey Vinson,0
+474265,103770,"Play, Google",Grade 8,Black,0,M,No,No,NO,46.5,49,2.5,94.897957,No,1,,73,79,92.40506,School C,Stacey Vinson,0
+908587,326572,"Stone, Emma",Grade 9,Hispanic,0,F,Yes,Yes,YES,26,28,2,92.85714,Yes,1,,51,79,64.556961,School C,Robert Schornick,0
+451447,102190,"People, Party",Grade 9,Black,0,M,No,No,NO,10,10,0,100,No,1,,66,69,95.652176,School C,Robert Schornick,0
