@@ -1,0 +1,167 @@
+<body class="attendance_filter">
+    <div class="container-fluid">
+        <div class="col-md-offset-1 col-md-10 col-sm-12">
+            <div class="row">
+                <div class="col-sm-12">
+                    <ol class="breadcrumb" style="margin-bottom: 0px">
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li class="active">Attendance Filterable</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-sm-12 col-md-offset-3 col-md-6">
+                        <h2 class="text-center">Attendance
+                        </h2>
+                        <h2 class="text-center">
+                          <small><%= @year %></small>
+                        </h2>
+                    </div>
+                    <div class="col-sm-12 col-md-3">
+                      <div class="card card-block">
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="min-height: 150px">
+                <div class="col-sm-3">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div id="menuselect">
+                                <h5 class="text-center" style="margin-top: 0px">School Selector <i class="fa fa-info-circle" data-toggle="hover" data-placement="top" data-content="Select multiple schools by holding control + click (MAC: CMD + click)"></i></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="panel panel-white" style="min-height: 160px">
+                        <div class="panel-heading">
+                            <h5 class="text-center">Total Students</h5>
+                        </div>
+                        <div class="panel-body text-center" id="total-students" style="font-size: 24px; padding-top: 30px"></div>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="panel panel-white" style="min-height: 160px">
+                        <div class="panel-heading">
+                            <h5 class="text-center">Attendance Percent <i class="fa fa-info-circle" data-toggle="hover" data-placement="top" data-content="Nothing fancy here, it's the overall attendance percent"></i></h5>
+                        </div>
+                        <div class="panel-body text-center" id="attendance-percent" style="font-size: 24px; padding-top: 30px"></div>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="panel panel-white" style="min-height: 160px">
+                        <div class="panel-heading">
+                            <h5 class="text-center">Chronic Percent <i class="fa fa-info-circle" data-toggle="hover" data-placement="top" data-content="Chronically absent is defined as a student who misses greater than or equal to 10% of schools days"></i></h5>
+                        </div>
+                        <div class="panel-body text-center" id="chronic-percent" style="font-size: 24px; padding-top: 30px"></div>
+                    </div>
+                </div>
+                <div class="col-sm-3" id="row-selection">
+                    <div class="panel panel-white" style="min-height: 160px">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <!-- <button type="button" name="button" class="btn btn-info btn-block">Take a Tour</button> -->
+                                </div>
+                                <div class="col-sm-6">
+                                    <a href='javascript:dc.filterAll();dc.redrawAll();' class="btn btn-success btn-block">Reset All
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            Current Selection:
+                            <strong class="filter-count">_</strong>
+                            selected out of
+                            <strong class="total-count">_</strong>
+                            records
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="panel panel-white" style="min-height: 160px" hidden="hidden">
+                    <div class="panel-heading">
+                        <h5>Days Present</h5>
+                    </div>
+                    <div class="panel-body text-center" id="days-present" style="font-size: 24px; padding-top: 30px"></div>
+                </div>
+
+                <div class="panel panel-white" style="min-height: 160px" hidden="hidden">
+                    <div class="panel-heading">
+                        <h5>Days in Membership</h5>
+                    </div>
+                    <div class="panel-body text-center" id="days-in-membership" style="font-size: 24px; padding-top: 30px"></div>
+                </div>
+
+                <div class="panel panel-white" style="min-height: 160px" hidden="hidden">
+                    <div class="panel-heading">
+                        <h5>Chronic Students</h5>
+                    </div>
+                    <div class="panel-body text-center" id="chronic-students" style="font-size: 24px; padding-top: 30px"></div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6" id="gender-chart">
+                    <h5>Gender Breakdown</h5>
+                    <span class='reset' style='visibility: hidden;'>Current filter:
+                        <span class='filter'></span>
+                    </span>
+                </div>
+                <div class="col-sm-6" id="grade-chart">
+                    <h5>Attendance by Grade</h5>
+                    <span class='reset' style='visibility: hidden;'>Current filter:
+                        <span class='filter'></span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4" id="ethnicity-chart">
+                    <h5>Attendance by Race</h5>
+                </div>
+                <div class="col-sm-4" id="ell-chart">
+                    <h5>Attendance by ELL Status</h5>
+                </div>
+                <div class="col-sm-4" id="sped-chart">
+                    <h5>Attendance by SPED Status</h5>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="page-header">
+                            <h2 class="text-center">Attendance Table</h2>
+                        </div>
+                        <table class="table" id="attendance-filtered-table">
+                            <thead>
+                                <tr>
+                                    <th>Letter</th>
+                                    <th>Student Name</th>
+                                    <th>Student ID</th>
+                                    <th>Days Present</th>
+                                    <th>Days in Membership</th>
+                                    <th>% Attendance</th>
+                                    <th>Absences</th>
+                                    <th>Chronic (Y/N)</th>
+                                    <th>Grade</th>
+                                    <th>Ethnicity</th>
+                                    <th>Gender</th>
+                                    <th>ELL</th>
+                                    <th>School</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
