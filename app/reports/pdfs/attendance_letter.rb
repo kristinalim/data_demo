@@ -10,7 +10,7 @@ module Pdfs
 
     def render
       WickedPdf.new.pdf_from_string(
-        context.render_to_string('pdfs/attendance_letter/main')
+        context.render_to_string('pdfs/attendance_letter/main', layout: 'application')
       )
     end
   end
