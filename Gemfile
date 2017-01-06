@@ -42,6 +42,8 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 
+# Include the vendored binary for generating PDF from HTML.
+gem 'wkhtmltopdf-binary'
 # Generate PDFs from HTML templates.
 gem 'wicked_pdf'
 
