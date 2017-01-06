@@ -200,7 +200,7 @@ $(document).on("turbolinks:load", function() {
                         targets: 0,
                         width: '100px',
                         data: function(d) {
-                            return ("<a href='#' class='btn btn-block btn-xs btn-primary' target='_blank'>Generate Letter</a>");
+                            return ("<a href='/attendance/" + d.STUDENTID + "/letter.pdf' class='btn btn-block btn-xs btn-primary' target='_blank'>Generate Letter</a>");
                         }
                     }, {
                         targets: 1,
