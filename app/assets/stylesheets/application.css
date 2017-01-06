@@ -10,11 +10,16 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
- *= require font-awesome
  *= require jquery-ui
- *= require_directory ../../../vendor/assets/stylesheets/
+ *= require font-awesome
+ *= require fontawesome-iconpicker.min
+ *= require bootstrap-tour.min
+ *= require bootstrap-tps-theme.min
+ *= require datatables.min
+ *= require dc
+ *= require attendance
+ *= require home
+ *= require_self
  */
 
 body {
