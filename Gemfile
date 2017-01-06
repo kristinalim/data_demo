@@ -43,7 +43,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 # Include the vendored binary for generating PDF from HTML.
-gem 'wkhtmltopdf-binary'
+gem 'wkhtmltopdf-binary', '0.9.9.3'
 # Generate PDFs from HTML templates.
 gem 'wicked_pdf'
 
