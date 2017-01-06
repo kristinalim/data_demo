@@ -12,6 +12,10 @@ module Pdfs
         def first_name
           'Johnathan'
         end
+
+        def absences_count
+          rand(15)
+        end
       end
 
       super(pdf_options)
@@ -28,7 +32,10 @@ module Pdfs
             letter_writer: 'Diane Dross',
             letter_writer_description: 'Principal - Phoenix Rising',
             school_name: 'Phoenix Rising',
-            school_phone: '+0123456789'
+            school_phone: '+0123456789',
+            data: {
+              average_absences_count: rand(15)
+            }
           },
           layout: 'application'
         })
