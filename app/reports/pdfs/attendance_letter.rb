@@ -1,22 +1,10 @@
 module Pdfs
   class AttendanceLetter < Base
-    attr_accessor :attendance
+    attr_accessor :attendance_summary, :attendance
 
-    def initialize(attendance, pdf_options)
+    def initialize(attendance_summary, attendance, pdf_options)
+      self.attendance_summary = attendance_summary
       self.attendance = attendance
-
-      # TODO: Remove this section if the real "attendance" value is being
-      # passed.
-      self.attendance = Object.new
-      self.attendance.instance_eval do
-        def first_name
-          'Johnathan'
-        end
-
-        def absences_count
-          rand(15)
-        end
-      end
 
       super(pdf_options)
     end
@@ -26,15 +14,14 @@ module Pdfs
         context.render_to_string('pdfs/attendance_letter/main', {
           locals: {
             attendance: attendance,
-            # TODO: Replace with intended values.
             letter_date: Time.zone.today,
             letter_date_format: '%B %d, %Y',
-            letter_writer: 'Diane Dross',
-            letter_writer_description: 'Principal - Phoenix Rising',
-            school_name: 'Phoenix Rising',
-            school_phone: '+0123456789',
+            letter_writer: attendance.school_principal_name,
+            letter_writer_description: "Principal - #{attendance.school_name}",
+            school_name: attendance.school_name,
+            school_phone: '+0123456789', # TODO: Replace with actual school phone number.
             data: {
-              average_absences_count: rand(15)
+              average_absences_count: attendance_summary.average_absences_count(attendance.school_name)
             }
           },
           layout: 'application'
