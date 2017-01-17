@@ -1,0 +1,41 @@
+en:
+  attendance_letter:
+    address_html: "<p>Dear Parent / Guardian of %{first_name},</p>"
+    body_before_chart_html: "<p>We have missed %{first_name} at school recently.</p>"
+    highlight_html:
+      "Why is %{first_name} missing school? Let us know what gets in the way of %{first_name}
+      being at school every day. Maybe we can help! Please call %{school_phone} to provide
+      information about your situation."
+    signature_heading: "Sincerely,"
+    footnotes_html:
+      "<p>
+      The Oklahoma Compulsory Attendance Law states, &ldquo;if a child is absent without a valid excuse four (4) or more days
+      or parts of days within a four-week period, the parents shall be notified. If the child is absent from school for ten
+      (10) or more days or parts of days within a semester without a valid excuse, the attendance officer shall immediately
+      report such absences to the district attorney in the county wherein the school is located for juvenile proceedings
+      pursuant to Title 10 of the Oklahoma States.&rdquo; The specific language, exceptions, and penalties of the Statues have
+      been provided for you on the reverse side of this letter, but we are far more interested in getting %{first_name}
+      back in school where he/she can learn and grow together with us. Please help us help %{first_name} succeed in
+      school by bringing him/her every day.
+      </p>"
+    principal_job_description: "Principal - %{school_name}"
+    chart:
+      title: "Absences"
+      typical_student: "Typical %{school_name} student"
+    did_you_know:
+      heading: "Did you know?"
+      body_html:
+        "<p>A student is chronically absent if they miss just 2 days a month.</p>
+
+        <p>AND</p>
+
+        <p>Chronic absenteeism...</p>
+
+        <ul>
+          <li>Is a primary cause of lower academic achievement.</li>
+          <li>Is a powerful predictor of students who may eventually drop out of school.</li>
+          <li>Can even impact students in Pre-K, Kindergarten and 1<sup>st</sup> Grade by making it far less likely that they will read on grade level by the 3<sup>rd</sup> Grade.</li>
+          <li>Impacts other students, too. Students who are frequently absent require more individual instruction due to assigments missed. This takes away from valuable class learning time.</li>
+        </ul>
+
+        <p>We want your child to achieve great things! Being at school every day CAN make a HUGE difference in their success now and in the future!</p>"

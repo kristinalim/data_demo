@@ -3,22 +3,9 @@
         <div class="top-bar"></div>
 
         <div class="front-side-main">
-            <h3>Did you know?</h3>
+            <h3><%= I18n.t('attendance_letter.did_you_know.heading', locale: locale) %></h3>
 
-            <p>A student is chronically absent if they miss just 2 days a month.</p>
-
-            <p>AND</p>
-
-            <p>Chronic absenteeism...</p>
-
-            <ul>
-                <li>Is a primary cause of lower academic achievement.</li>
-                <li>Is a powerful predictor of students who may eventually drop out of school.</li>
-                <li>Can even impact students in Pre-K, Kindergarten and 1<sup>st</sup> Grade by making it far less likely that they will read on grade level by the 3<sup>rd</sup> Grade.</li>
-                <li>Impacts other students, too. Students who are frequently absent require more individual instruction due to assigments missed. This takes away from valuable class learning time.</li>
-            </ul>
-
-            <p>We want your child to achieve great things! Being at school every day CAN make a HUGE difference in their success now and in the future!</p>
+            <%= I18n.t('attendance_letter.did_you_know.body_html', locale: locale).html_safe %>
         </div>
 
         <div class="bottom-bar"></div>
@@ -31,42 +18,31 @@
 
         <div class="letter">
             <div class="letter-date">
-                <%= letter_date.strftime(letter_date_format) %>
+                <%= I18n.l(letter_date, format: :letter, locale: locale) %>
             </div>
 
             <div class="addressee">
-                <p>Dear Parent / Guardian of <%= attendance.first_name %>,</p>
+                <%= I18n.t('attendance_letter.address_html', first_name: attendance.first_name, locale: locale).html_safe %>
             </div>
 
-            <p>We have missed <%= attendance.first_name %> at school recently.</p>
+            <%= I18n.t('attendance_letter.body_before_chart_html', first_name: attendance.first_name, locale: locale).html_safe %>
 
             <div id="absences_vs_average_chart" class="chart">
             </div>
 
             <div class="highlight">
-                Why is <%= attendance.first_name %> missing school? Let us know what gets in the way of <%= attendance.first_name %>
-                being at school every day. Maybe we can help! Please call <%= school_phone %> to provide
-                information about your situation.
+                <%= I18n.t('attendance_letter.highlight_html', first_name: attendance.first_name, school_phone: school_phone, locale: locale).html_safe %>
             </div>
 
             <div class="letter-signature">
-                Sincerely,<br />
+                <%= I18n.t('attendance_letter.signature_heading', locale: locale) %><br />
                 <%= letter_writer %><br />
                 <%= letter_writer_description %>
             </div>
         </div>
 
         <div class="footnotes">
-            <p>
-                The Oklahoma Compulsory Attendance Law states, &ldquo;if a child is absent without a valid excuse four (4) or more days
-                or parts of days within a four-week period, the parents shall be notified. If the child is absent from school for ten
-                (10) or more days or parts of days within a semester without a valid excuse, the attendance officer shall immediately
-                report such absences to the district attorney in the county wherein the school is located for juvenile proceedings
-                pursuant to Title 10 of the Oklahoma States.&rdquo; The specific language, exceptions, and penalties of the Statues have
-                been provided for you on the reverse side of this letter, but we are far more interested in getting <%= attendance.first_name %>
-                back in school where he/she can learn and grow together with us. Please help us help <%= attendance.first_name %> succeed in
-                school by bringing him/her every day.
-            </p>
+            <%= I18n.t('attendance_letter.footnotes_html', first_name: attendance.first_name, locale: locale).html_safe %>
         </div>
     </div>
 </div>
@@ -82,7 +58,7 @@
         width: chartWidth
       },
       title: {
-        text: 'Absences',
+        text: '<%= j I18n.t('attendance_letter.chart.title', locale: locale) %>',
         style: {
           color: '#000'
         }
@@ -90,7 +66,7 @@
       xAxis: {
         categories: [
           '<%= j attendance.first_name %>',
-          'Typical <%= j school_name %> student'
+          '<%= j I18n.t('attendance_letter.chart.typical_student', school_name: school_name, locale: locale) %>'
         ],
         labels: {
           style: {

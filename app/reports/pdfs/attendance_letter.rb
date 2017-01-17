@@ -13,11 +13,11 @@ module Pdfs
       WickedPdf.new.pdf_from_string(
         context.render_to_string('pdfs/attendance_letter/main', {
           locals: {
+            locale: locale,
             attendance: attendance,
             letter_date: Time.zone.today,
-            letter_date_format: '%B %d, %Y',
             letter_writer: attendance.school_principal_name,
-            letter_writer_description: "Principal - #{attendance.school_name}",
+            letter_writer_description: I18n.t('attendance_letter.principal_job_description', school_name: attendance.school_name, locale: locale),
             school_name: attendance.school_name,
             school_phone: '+0123456789', # TODO: Replace with actual school phone number.
             data: {
