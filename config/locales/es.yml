@@ -1,0 +1,4 @@
+es:
+  date:
+    formats:
+      letter: "%d de %B de %Y"

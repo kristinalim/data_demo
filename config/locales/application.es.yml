@@ -1,0 +1,33 @@
+es:
+  attendance_letter:
+    address_html: "<p>Estimado padre o tutor de %{first_name},</p>"
+    body_before_chart_html: "<p>Extrañamos a %{first_name} en la escuela recientemente.</p>"
+    highlight_html:
+      "¿Por qué ha está faltando a la escuela %{first_name}? Díganos que es lo que impide que %{first_name} esté en la escuela todos los días. Tal vez le podamos ayudar! Por
+      favor llame al teléfono de la escuela %{school_phone} para dar información acerca de su situación."
+    signature_heading: "Atentamente,"
+    footnotes_html:
+      "<p>
+      La ley de Educación obligatoria establece que &ldquo;si su hijo está ausente sin una excusa válida por cuatro (4) o más días o partes del día dentro de un período de cuatro semanas, los padres deben de ser notificados. Si el alumno está ausente de la escuela por diez(10) o más días o parte de los días en un semestre sin una excusa válida, el oficial de asistencia debe inmediatamente reportar dichas ausencias al fiscal del distrito donde se ubica la escuela para procedimientos de menores de acuerdo con el Título 10  del estado de  Oklahoma&rdquo; El contenido específico, las excepciones y las penalidades  de los estatutos se proporcional al reverso de esta carta, pero estamos mucho más interesados en que su hijo %{first_name} regrese a la escuela donde pueda aprender y crecer junto con nosotros. Por favor ayúdenos a ayudar a %{first_name} tener éxito en la escuela trayéndolo todos los días.
+      </p>"
+    principal_job_description: "Directora de %{school_name}"
+    chart:
+      title: "Ausencias"
+      typical_student: "Alumno típico %{school_name}"
+    did_you_know:
+      heading: "¿Sabía usted?"
+      body_html:
+        "<p>Un alumno es considerado como ausente de forma crónica si falta solamente 2 días al mes.</p>
+
+        <p>Y</p>
+
+        <p>El ausentismo crónico…</p>
+
+        <ul>
+          <li>Es una causa de bajo rendimiento académico.</li>
+          <li>Es un importante indicador de que el alumno quizás termine por abandonar sus estudios.</li>
+          <li>Puede incluso afectar a los alumnos de pre-kínder Pre- K, Kindergarten y primer grado haciendo mucho menos probable que lean adecuadamente cuando estén en tercer grado.</li>
+          <li>Afecta a otros alumnos, también. Los alumnos que faltan seguido necesitan más enseñanza individual porque se perdieron tareas. Esto resta tiempo valioso al aprendizaje del grupo.</li>
+        </ul>
+
+        <p>¡Deseamos que su hijo logre grandes cosas!  Estar en la escuela todos los días PUEDE lograr una GRAN diferencia en su éxito presente y futuro!</p>"
