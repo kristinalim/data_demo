@@ -32,3 +32,4 @@
 //= require highcharts-options
 //= require jquery-migrate
 //= require papaparse.min
+//= require_tree ./general
