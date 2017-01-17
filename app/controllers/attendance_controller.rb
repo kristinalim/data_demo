@@ -13,7 +13,7 @@ class AttendanceController < ApplicationController
     @attendance = @attendance_summary.find(params[:id].to_s)
 
     respond_to do |format|
-      format.pdf { send_pdf(Pdfs::AttendanceLetter.new(@attendance_summary, @attendance, context: self), "AttendanceLetter.pdf") }
+      format.pdf { send_pdf(Pdfs::AttendanceLetter.new(@attendance_summary, @attendance, locale: params[:locale].to_s, context: self), "AttendanceLetter.pdf") }
     end
   end
 end
