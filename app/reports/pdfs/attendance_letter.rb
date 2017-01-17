@@ -25,7 +25,15 @@ module Pdfs
             }
           },
           layout: 'application'
-        })
+        }),
+        footer: {
+          content: context.render_to_string('pdfs/attendance_letter/footer', {
+            locals: {
+              attendance: attendance
+            },
+            layout: false
+          })
+        }
       )
     end
   end
