@@ -200,7 +200,18 @@ $(document).on("turbolinks:load", function() {
                         targets: 0,
                         width: '100px',
                         data: function(d) {
-                            return ("<a href='/attendance/" + d.STUDENTID + "/letter.pdf' class='btn btn-block btn-xs btn-primary' target='_blank'>Generate Letter</a>");
+                            return (" \
+                                <div class='btn-group'> \
+                                    <a href='#' class='btn btn-block btn-xs btn-primary dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'> \
+                                        Generate Letter \
+                                        <span class='caret'></span> \
+                                    </a> \
+                                    <ul class='dropdown-menu'> \
+                                      <li><a href='/attendance/" + d.STUDENTID + "/letter.pdf?locale=en' target='_blank'>English</a></li> \
+                                      <li><a href='/attendance/" + d.STUDENTID + "/letter.pdf?locale=es' target='_blank'>Spanish</a></li> \
+                                    </ul> \
+                                </div> \
+                            ");
                         }
                     }, {
                         targets: 1,
