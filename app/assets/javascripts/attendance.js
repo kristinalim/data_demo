@@ -21,6 +21,12 @@ $(document).on("turbolinks:load", function() {
             $('.attendances-select-all').prop('checked', false);
         });
 
+        $('#attendance-filtered-table').on('draw.dt', function() {
+            if ($('.attendances-select-all').is(':checked')) {
+                $('.attendances-select-all').prop('checked', false);
+            }
+        });
+
         $('[data-toggle="hover"]').popover({
             trigger: 'hover'
         });
