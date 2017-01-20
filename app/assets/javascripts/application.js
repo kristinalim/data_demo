@@ -15,6 +15,7 @@
 //= require jquery-ui
 //= require turbolinks
 //= require d3
+//= require Blob
 //= require FileSaver
 //= require attendance
 //= require action_cable
