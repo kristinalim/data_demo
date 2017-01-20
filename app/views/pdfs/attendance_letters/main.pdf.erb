@@ -3,5 +3,13 @@
       <div class="page-break"></div>
     <% end %>
 
-    <%= render 'pdfs/attendance_letters/attendance_letter', attendance: attendance, attendance_summary: attendance_summary, letter_date: letter_date, school_phone: school_phone, locale: locale %>
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    <%= render 'pdfs/attendance_letters/attendance_letter', attendance: attendance, attendance_summary: attendance_summary, letter_date: letter_date, school_phone: school_phone, locale: locale %>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 <% end %>
