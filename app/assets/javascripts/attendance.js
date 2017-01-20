@@ -173,6 +173,31 @@ $(document).on("turbolinks:load", function() {
                 .dimension(ndx)
                 .group(all);
 
+            var generateAttendanceLetters = function(locale) {
+                var ids = $.map($('[name="attendance_ids[]"]:checked'), function(field) {
+                    return $(field).attr('value');
+                });
+
+                if (ids.length) {
+                    var url = '/attendance/letters.pdf?' + $.param({locale: locale, attendance_ids: ids});
+                    console.log(url);
+
+                    var request = new XMLHttpRequest();
+                    request.open('GET', url, true);
+                    request.responseType = 'arraybuffer';
+                    request.onload = function(event) {
+                        var blob = new Blob([request.response], {type: 'application/pdf'});
+                        saveAs(blob, 'AttendanceLetters.pdf');
+                    };
+                    request.onerror = function() {
+                        alert('There was an error generating the letters.');
+                    };
+                    request.send();
+                } else {
+                    alert('Please select students for whom to generate letters.');
+                }
+            };
+
             //table
             var dataTableOptions = {
                 "lengthMenu": [
@@ -184,7 +209,7 @@ $(document).on("turbolinks:load", function() {
                         data;
                 },
                 "order": [
-                    [3, 'desc']
+                    [4, 'desc']
                 ],
                 scrollX: true,
                 colReorder: true,
@@ -195,9 +220,32 @@ $(document).on("turbolinks:load", function() {
                 }, {
                     extend: 'csvHtml5',
                     title: 'Attendance Table'
+                }, {
+                    extend: 'collection',
+                    text: 'Generate Letter',
+                    className: 'generate-letter-button',
+                    buttons: [
+                        {
+                            text: 'English',
+                            action: function(e, dt, node, config) {
+                                generateAttendanceLetters('en');
+                            }
+                        }, {
+                            text: 'Spanish',
+                            action: function(e, dt, node, config) {
+                                generateAttendanceLetters('es');
+                            }
+                        },
+                    ]
                 }],
                 columnDefs: [{
                         targets: 0,
+                        width: '30px',
+                        data: function(d) {
+                            return ('<input type="checkbox" name="attendance_ids[]" value="' + d.STUDENTID + '" />');
+                        }
+                    }, {
+                        targets: 1,
                         width: '100px',
                         data: function(d) {
                             return (" \
@@ -214,73 +262,73 @@ $(document).on("turbolinks:load", function() {
                             ");
                         }
                     }, {
-                        targets: 1,
+                        targets: 2,
                         width: '200px',
                         data: function(d) {
                             return (d.LASTFIRST);
                         }
                     }, {
-                        targets: 2,
+                        targets: 3,
                         width: '100px',
                         data: function(d) {
                             return (d.STUDENT_NUMBER);
                         }
                     }, {
-                        targets: 3,
+                        targets: 4,
                         width: '50px',
                         data: function(d) {
                             return (d.present);
                         }
                     }, {
-                        targets: 4,
+                        targets: 5,
                         width: '50px',
                         data: function(d) {
                             return (d.in_membership);
                         }
                     }, {
-                        targets: 5,
+                        targets: 6,
                         width: '50px',
                         data: function(d) {
                             return (Math.round(d.percent_attn));
                         }
                     }, {
-                        targets: 6,
+                        targets: 7,
                         width: '50px',
                         data: function(d) {
                             return (d.abs);
                         }
                     }, {
-                        targets: 7,
+                        targets: 8,
                         width: '50px',
                         data: function(d) {
                             return (d.chronic);
                         }
                     }, {
-                        targets: 8,
+                        targets: 9,
                         width: '50px',
                         data: function(d) {
                             return (d.GRADE_LEVEL);
                         }
                     }, {
-                        targets: 9,
+                        targets: 10,
                         width: '100px',
                         data: function(d) {
                             return (d.ETHNICITY)
                         }
                     }, {
-                        targets: 10,
+                        targets: 11,
                         width: '50px',
                         data: function(d) {
                             return (d.GENDER)
                         }
                     }, {
-                        targets: 11,
+                        targets: 12,
                         width: '50px',
                         data: function(d) {
                             return (d.OK_ELL)
                         }
                     }, {
-                        targets: 12,
+                        targets: 13,
                         width: '250px',
                         data: function(d) {
                             return (d.school_name);

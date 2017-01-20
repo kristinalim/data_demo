@@ -11,7 +11,6 @@ class AttendanceSummary
 
   def average_absences_count(school_name)
     parse_csv
-    Rails.logger.info "average_absences_count: #{school_name}"
 
     student_count = 0
     absences_total = 0
@@ -33,21 +32,34 @@ class AttendanceSummary
     end
   end
 
-  def find(student_id)
+  def find(target)
+    student_ids = target.is_a?(String) ? [target] : target
+
     parse_csv
 
+    result = []
+
     csv.each do |row|
-      if row['STUDENTID'] == student_id
+      if student_ids.include?(row['STUDENTID'])
         last_name, first_name = row['LASTFIRST'].split(', ')
 
-        return Attendance.new({
+        attendance = Attendance.new({
+          student_id: row['STUDENTID'],
           first_name: first_name,
           last_name: last_name,
           school_name: row['school_name'],
           school_principal_name: row['ild'],
           absences_count: BigDecimal.new(row['abs'].to_s)
         })
+
+        if target.is_a?(String)
+          return attendance
+        else
+          result << attendance
+        end
       end
     end
+
+    target.is_a?(String) ? nil : result
   end
 end

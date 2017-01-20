@@ -3,3 +3,7 @@
  *= require_tree ./pdfs/
  *= require_self
  */
+
+.page-break {
+  page-break-before: always;
+}
