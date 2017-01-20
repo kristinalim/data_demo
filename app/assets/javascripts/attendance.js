@@ -221,7 +221,7 @@ $(document).on("turbolinks:load", function() {
                         data;
                 },
                 "order": [
-                    [4, 'desc']
+                    [3, 'desc']
                 ],
                 scrollX: true,
                 colReorder: true,
@@ -259,89 +259,72 @@ $(document).on("turbolinks:load", function() {
                         }
                     }, {
                         targets: 1,
-                        width: '100px',
-                        data: function(d) {
-                            return (" \
-                                <div class='btn-group'> \
-                                    <a href='#' class='btn btn-block btn-xs btn-primary dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'> \
-                                        Generate Letter \
-                                        <span class='caret'></span> \
-                                    </a> \
-                                    <ul class='dropdown-menu'> \
-                                      <li><a href='/attendance/" + d.STUDENTID + "/letter.pdf?locale=en' target='_blank'>English</a></li> \
-                                      <li><a href='/attendance/" + d.STUDENTID + "/letter.pdf?locale=es' target='_blank'>Spanish</a></li> \
-                                    </ul> \
-                                </div> \
-                            ");
-                        }
-                    }, {
-                        targets: 2,
                         width: '200px',
                         data: function(d) {
                             return (d.LASTFIRST);
                         }
                     }, {
-                        targets: 3,
+                        targets: 2,
                         width: '100px',
                         data: function(d) {
                             return (d.STUDENT_NUMBER);
                         }
                     }, {
-                        targets: 4,
+                        targets: 3,
                         width: '50px',
                         data: function(d) {
                             return (d.present);
                         }
                     }, {
-                        targets: 5,
+                        targets: 4,
                         width: '50px',
                         data: function(d) {
                             return (d.in_membership);
                         }
                     }, {
-                        targets: 6,
+                        targets: 5,
                         width: '50px',
                         data: function(d) {
                             return (Math.round(d.percent_attn));
                         }
                     }, {
-                        targets: 7,
+                        targets: 6,
                         width: '50px',
                         data: function(d) {
                             return (d.abs);
                         }
                     }, {
-                        targets: 8,
+                        targets: 7,
                         width: '50px',
                         data: function(d) {
                             return (d.chronic);
                         }
                     }, {
-                        targets: 9,
+                        targets: 8,
                         width: '50px',
                         data: function(d) {
                             return (d.GRADE_LEVEL);
                         }
                     }, {
-                        targets: 10,
+                        targets: 9,
                         width: '100px',
                         data: function(d) {
                             return (d.ETHNICITY)
                         }
                     }, {
-                        targets: 11,
+                        targets: 10,
                         width: '50px',
                         data: function(d) {
                             return (d.GENDER)
                         }
                     }, {
-                        targets: 12,
+                        targets: 11,
                         width: '50px',
                         data: function(d) {
                             return (d.OK_ELL)
                         }
                     }, {
-                        targets: 13,
+                        targets: 12,
                         width: '250px',
                         data: function(d) {
                             return (d.school_name);
