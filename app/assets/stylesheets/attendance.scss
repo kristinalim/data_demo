@@ -7,3 +7,9 @@
     margin-left: 10px;
   }
 }
+
+table.dataTable {
+  th[data-type="boolean"] {
+    text-align: center;
+  }
+}

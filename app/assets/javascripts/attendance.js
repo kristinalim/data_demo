@@ -9,6 +9,18 @@ $(document).on("turbolinks:load", function() {
             }
         }
 
+        $(document).on('click', '.attendances-select-all', function() {
+            if ($(this).is(':checked')) {
+                $('[name="attendance_ids[]"]').prop('checked', true);
+            } else {
+                $('[name="attendance_ids[]"]').prop('checked', false);
+            }
+        });
+
+        $(document).on('click', '[name="attendance_ids[]"]', function() {
+            $('.attendances-select-all').prop('checked', false);
+        });
+
         $('[data-toggle="hover"]').popover({
             trigger: 'hover'
         });
@@ -241,6 +253,7 @@ $(document).on("turbolinks:load", function() {
                 columnDefs: [{
                         targets: 0,
                         width: '30px',
+                        orderable: false,
                         data: function(d) {
                             return ('<input type="checkbox" name="attendance_ids[]" value="' + d.STUDENTID + '" />');
                         }
