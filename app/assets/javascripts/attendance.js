@@ -10,11 +10,10 @@ $(document).on("turbolinks:load", function() {
         }
 
         $(document).on('click', '.attendances-select-all', function() {
-            if ($(this).is(':checked')) {
-                $('[name="attendance_ids[]"]').prop('checked', true);
-            } else {
-                $('[name="attendance_ids[]"]').prop('checked', false);
-            }
+            var oTable = $('#attendance-filtered-table').DataTable();
+            var rows = oTable.rows({search: 'applied'}).nodes();
+
+            $('[name="attendance_ids[]"]', rows).prop('checked', this.checked);
         });
 
         $(document).on('click', '[name="attendance_ids[]"]', function() {
