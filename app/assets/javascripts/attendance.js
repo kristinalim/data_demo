@@ -196,6 +196,8 @@ $(document).on("turbolinks:load", function() {
                 });
 
                 if (ids.length) {
+                    $('#generating-pdf').show();
+
                     var url = '/attendance/letters.pdf?' + $.param({locale: locale, attendance_ids: ids});
                     console.log(url);
 
@@ -205,6 +207,8 @@ $(document).on("turbolinks:load", function() {
                     request.onload = function(event) {
                         var blob = new Blob([request.response], {type: 'application/pdf'});
                         saveAs(blob, 'AttendanceLetters.pdf');
+
+                        $('#generating-pdf').hide();
                     };
                     request.onerror = function() {
                         alert('There was an error generating the letters.');
