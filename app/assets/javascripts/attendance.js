@@ -245,6 +245,7 @@ $(document).on("turbolinks:load", function() {
                     extend: 'collection',
                     text: 'Generate Letter',
                     className: 'generate-letter-button',
+                    autoClose: true,
                     buttons: [
                         {
                             text: 'English',
